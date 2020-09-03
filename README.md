@@ -7,7 +7,7 @@ If you want to use this for the original Dark Souls, use the [upstream version](
 ## Changes in fork
 Only minor modifications were done to the original project. I worked around the mandatory DLC problem by deleting (mostly) any references to the DLCs for each version. --- If the program doesn't know a DLC exists, the program doesn't need the DLC.
 
-### Why couldn't thefifthmatt do this if this was so easy?
+### Why didn't thefifthmatt do this if this was so easy?
 To put it simply, [thefifthmatt](https://github.com/thefifthmatt) appears to believe in sane code that works well and is maintainable. This is a good thing. Should they ever make DLCs optional, they will likely continue to do things in this way, as they should. 
 
 I, on the other hand, quickly and sloppily used horrible practices to make it just work. Having three different version is a testament to that. This is honestly one of the worst ways to implement optional DLCs, but if it works, it works I guess?
