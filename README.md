@@ -1,16 +1,16 @@
 # DS3 Fog Gate Randomizer (Optional DLCs)
 Information on program and usage can be found in the description of the [original mod](https://www.nexusmods.com/darksouls3/mods/551?tab=description) (Read this prior to use).
 All instruction should be the same for the most part, but ensure the DLC options for other mods reflects the DLCs you have.
-Also, keep in mind that the enemy randomizer requires both DLCs to work.
-If you want to use this for Dark Souls I, use the [upstream version](https://github.com/thefifthmatt/FogMod) to avoid complications.
+Also, keep in mind that the enemy randomizer requires both DLCs to work.  
+If you want to use this for the original Dark Souls, use the [upstream version](https://github.com/thefifthmatt/FogMod) to avoid complications.
 
 ## Changes in fork
 Only minor modifications were done to the original project. I worked around the mandatory DLC problem by deleting (mostly) any references to the DLCs for each version. --- If the program doesn't know a DLC exists, the program doesn't need the DLC.
 
 ### Why couldn't thefifthmatt do this if this was so easy?
-To put it simply, [thefifthmatt](https://github.com/thefifthmatt) appears to believe in sane code that works well and is maintainable, as everyone should. Should they ever make DLCs optional, they will likely continue to do things in this way, as they should.
+To put it simply, [thefifthmatt](https://github.com/thefifthmatt) appears to believe in sane code that works well and is maintainable. This is a good thing. Should they ever make DLCs optional, they will likely continue to do things in this way, as they should. 
 
-I, on the other hand, quickly and sloppily used horrible practices to make it just work. Having three different version is a testament to that. This is honestly one of the worst ways to implement optional DLCs, but it is a way.
+I, on the other hand, quickly and sloppily used horrible practices to make it just work. Having three different version is a testament to that. This is honestly one of the worst ways to implement optional DLCs, but if it works, it works I guess?
 
 ## Warning
 I have done partial in-game testing for the Ringed City only version and out-of-game testing for the others (aka. it didn't give me an error when randomizing). While it should work properly, I don't guarantee that it will.
