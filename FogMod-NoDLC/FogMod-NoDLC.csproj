@@ -1,0 +1,411 @@
+﻿<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\Costura.Fody.4.1.0\build\Costura.Fody.props" Condition="Exists('packages\Costura.Fody.4.1.0\build\Costura.Fody.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{EC92141A-0936-4922-9BDA-30D0F164AADD}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <NoStandardLibraries>false</NoStandardLibraries>
+    <AssemblyName>FogMod-NoDLC</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>FogMod</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>FogMod.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>foggate.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Costura, Version=4.1.0.0, Culture=neutral, PublicKeyToken=9919ef960d84173d, processorArchitecture=MSIL">
+      <HintPath>packages\Costura.Fody.4.1.0\lib\net40\Costura.dll</HintPath>
+    </Reference>
+    <Reference Include="SoulsFormats">
+      <HintPath>..\SoulsFormats\SoulsFormats\bin\Release\net46\SoulsFormats.dll</HintPath>
+    </Reference>
+    <Reference Include="SoulsIds">
+      <HintPath>..\SoulsIds\SoulsIds\bin\Release\SoulsIds.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="YamlDotNet, Version=8.0.0.0, Culture=neutral, PublicKeyToken=ec19458f3c15af5e, processorArchitecture=MSIL">
+      <HintPath>packages\YamlDotNet.8.1.2\lib\net45\YamlDotNet.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="dist\DS1R\Layouts\GAME_AREA_PARAM_ST.xml" />
+    <Content Include="dist\DS1R\Layouts\ITEMLOT_PARAM_ST.xml" />
+    <Content Include="dist\DS1R\Layouts\NPC_PARAM_ST.xml" />
+    <Content Include="dist\DS1R\Layouts\SP_EFFECT_PARAM_ST.xml" />
+    <Content Include="dist\DS1\Layouts\GAME_AREA_PARAM_ST.xml" />
+    <Content Include="dist\DS1\Layouts\ITEMLOT_PARAM_ST.xml" />
+    <Content Include="dist\DS1\Layouts\NPC_PARAM_ST.xml" />
+    <Content Include="dist\DS1\Layouts\SP_EFFECT_PARAM_ST.xml" />
+    <Content Include="dist\fog.txt" />
+    <Content Include="dist\Names\CharaInitParam.txt" />
+    <Content Include="dist\Names\ModelName.txt" />
+    <Content Include="fogdist-nodlc\events.txt" />
+    <Content Include="fogdist-nodlc\fog.txt" />
+    <Content Include="fogdist-nodlc\Layouts\ACTIONBUTTON_PARAM_ST.xml" />
+    <Content Include="fogdist-nodlc\Layouts\AI_SOUND_PARAM_ST.xml" />
+    <Content Include="fogdist-nodlc\Layouts\ATK_PARAM_ST.xml" />
+    <Content Include="fogdist-nodlc\Layouts\ATTACK_ELEMENT_CORRECT_PARAM_ST.xml" />
+    <Content Include="fogdist-nodlc\Layouts\BEHAVIOR_PARAM_ST.xml" />
+    <Content Include="fogdist-nodlc\Layouts\BONFIRE_WARP_PARAM_ST.xml" />
+    <Content Include="fogdist-nodlc\Layouts\BUDGET_PARAM_ST.xml" />
+    <Content Include="fogdist-nodlc\Layouts\BULLET_CREATE_LIMIT_PARAM_ST.xml" />
+    <Content Include="fogdist-nodlc\Layouts\BULLET_PARAM_ST.xml" />
+    <Content Include="fogdist-nodlc\Layouts\CACL_CORRECT_GRAPH_ST.xml" />
+    <Content Include="fogdist-nodlc\Layouts\CEREMONY_PARAM_ST.xml" />
+    <Content Include="fogdist-nodlc\Layouts\CHARACTER_INIT_PARAM.xml" />
+    <Content Include="fogdist-nodlc\Layouts\CHARACTER_LOAD_PARAM_ST.xml" />
+    <Content Include="fogdist-nodlc\Layouts\CHARMAKEMENUTOP_PARAM_ST.xml" />
+    <Content Include="fogdist-nodlc\Layouts\CHARMAKEMENU_LISTITEM_PARAM_ST.xml" />
+    <Content Include="fogdist-nodlc\Layouts\CLEAR_COUNT_CORRECT_PARAM_ST.xml" />
+    <Content Include="fogdist-nodlc\Layouts\COOL_TIME_PARAM_ST.xml" />
+    <Content Include="fogdist-nodlc\Layouts\CULT_SETTING_PARAM_ST.xml" />
+    <Content Include="fogdist-nodlc\Layouts\DECAL_PARAM_ST.xml" />
+    <Content Include="fogdist-nodlc\Layouts\DIRECTION_CAMERA_PARAM_ST.xml" />
+    <Content Include="fogdist-nodlc\Layouts\EQUIP_MTRL_SET_PARAM_ST.xml" />
+    <Content Include="fogdist-nodlc\Layouts\EQUIP_PARAM_ACCESSORY_ST.xml" />
+    <Content Include="fogdist-nodlc\Layouts\EQUIP_PARAM_GOODS_ST.xml" />
+    <Content Include="fogdist-nodlc\Layouts\EQUIP_PARAM_PROTECTOR_ST.xml" />
+    <Content Include="fogdist-nodlc\Layouts\EQUIP_PARAM_WEAPON_ST.xml" />
+    <Content Include="fogdist-nodlc\Layouts\ESTUS_FLASK_RECOVERY_PARAM_ST.xml" />
+    <Content Include="fogdist-nodlc\Layouts\FACE_GEN_PARAM_ST.xml" />
+    <Content Include="fogdist-nodlc\Layouts\FACE_PARAM_ST.xml" />
+    <Content Include="fogdist-nodlc\Layouts\FACE_RANGE_PARAM_ST.xml" />
+    <Content Include="fogdist-nodlc\Layouts\FOOT_SFX_PARAM_ST.xml" />
+    <Content Include="fogdist-nodlc\Layouts\GAME_AREA_PARAM_ST.xml" />
+    <Content Include="fogdist-nodlc\Layouts\GAME_PROGRESS_PARAM_ST.xml" />
+    <Content Include="fogdist-nodlc\Layouts\GEMEFFECT_PARAM_ST.xml" />
+    <Content Include="fogdist-nodlc\Layouts\GEM_CATEGORY_PARAM_ST.xml" />
+    <Content Include="fogdist-nodlc\Layouts\GEM_DROP_DOPING_PARAM_ST.xml" />
+    <Content Include="fogdist-nodlc\Layouts\GEM_DROP_MODIFY_PARAM_ST.xml" />
+    <Content Include="fogdist-nodlc\Layouts\GEM_GEN_PARAM_ST.xml" />
+    <Content Include="fogdist-nodlc\Layouts\HIT_EFFECT_SE_PARAM_ST.xml" />
+    <Content Include="fogdist-nodlc\Layouts\HIT_EFFECT_SFX_CONCEPT_PARAM_ST.xml" />
+    <Content Include="fogdist-nodlc\Layouts\HIT_EFFECT_SFX_PARAM_ST.xml" />
+    <Content Include="fogdist-nodlc\Layouts\HIT_MTRL_PARAM_ST.xml" />
+    <Content Include="fogdist-nodlc\Layouts\ITEMLOT_PARAM_ST.xml" />
+    <Content Include="fogdist-nodlc\Layouts\KNOCKBACK_PARAM_ST.xml" />
+    <Content Include="fogdist-nodlc\Layouts\KNOWLEDGE_LOADSCREEN_ITEM_PARAM_ST.xml" />
+    <Content Include="fogdist-nodlc\Layouts\LOAD_BALANCER_DRAW_DIST_SCALE_PARAM_ST.xml" />
+    <Content Include="fogdist-nodlc\Layouts\LOAD_BALANCER_PARAM_ST.xml" />
+    <Content Include="fogdist-nodlc\Layouts\LOCK_CAM_PARAM_ST.xml" />
+    <Content Include="fogdist-nodlc\Layouts\LOD_BANK.xml" />
+    <Content Include="fogdist-nodlc\Layouts\MAGIC_PARAM_ST.xml" />
+    <Content Include="fogdist-nodlc\Layouts\MAP_MIMICRY_ESTABLISHMENT_PARAM_ST.xml" />
+    <Content Include="fogdist-nodlc\Layouts\MENUPROPERTY_LAYOUT.xml" />
+    <Content Include="fogdist-nodlc\Layouts\MENUPROPERTY_SPEC.xml" />
+    <Content Include="fogdist-nodlc\Layouts\MENU_OFFSCR_REND_PARAM_ST.xml" />
+    <Content Include="fogdist-nodlc\Layouts\MENU_PARAM_COLOR_TABLE_ST.xml" />
+    <Content Include="fogdist-nodlc\Layouts\MENU_VALUE_TABLE_SPEC.xml" />
+    <Content Include="fogdist-nodlc\Layouts\MODEL_SFX_PARAM_ST.xml" />
+    <Content Include="fogdist-nodlc\Layouts\MOVE_PARAM_ST.xml" />
+    <Content Include="fogdist-nodlc\Layouts\MULTI_ESTUS_FLASK_BONUS_PARAM_ST.xml" />
+    <Content Include="fogdist-nodlc\Layouts\MULTI_PLAY_CORRECTION_PARAM_ST.xml" />
+    <Content Include="fogdist-nodlc\Layouts\MULTI_SOUL_BONUS_RATE_PARAM_ST.xml" />
+    <Content Include="fogdist-nodlc\Layouts\NETWORK_AREA_PARAM_ST.xml" />
+    <Content Include="fogdist-nodlc\Layouts\NETWORK_MSG_PARAM_ST.xml" />
+    <Content Include="fogdist-nodlc\Layouts\NETWORK_PARAM_ST.xml" />
+    <Content Include="fogdist-nodlc\Layouts\NPC_AI_ACTION_PARAM_ST.xml" />
+    <Content Include="fogdist-nodlc\Layouts\NPC_PARAM_ST.xml" />
+    <Content Include="fogdist-nodlc\Layouts\NPC_THINK_PARAM_ST.xml" />
+    <Content Include="fogdist-nodlc\Layouts\OBJECT_MATERIAL_SFX_PARAM_ST.xml" />
+    <Content Include="fogdist-nodlc\Layouts\OBJECT_PARAM_ST.xml" />
+    <Content Include="fogdist-nodlc\Layouts\OBJ_ACT_PARAM_ST.xml" />
+    <Content Include="fogdist-nodlc\Layouts\PHANTOM_PARAM_ST.xml" />
+    <Content Include="fogdist-nodlc\Layouts\PLAY_REGION_PARAM_ST.xml" />
+    <Content Include="fogdist-nodlc\Layouts\PROTECTOR_GEN_PARAM_ST.xml" />
+    <Content Include="fogdist-nodlc\Layouts\RAGDOLL_PARAM_ST.xml" />
+    <Content Include="fogdist-nodlc\Layouts\REINFORCE_PARAM_PROTECTOR_ST.xml" />
+    <Content Include="fogdist-nodlc\Layouts\REINFORCE_PARAM_WEAPON_ST.xml" />
+    <Content Include="fogdist-nodlc\Layouts\ROLE_PARAM_ST.xml" />
+    <Content Include="fogdist-nodlc\Layouts\SE_MATERIAL_CONVERT_PARAM_ST.xml" />
+    <Content Include="fogdist-nodlc\Layouts\SHOP_LINEUP_PARAM.xml" />
+    <Content Include="fogdist-nodlc\Layouts\SKELETON_PARAM_ST.xml" />
+    <Content Include="fogdist-nodlc\Layouts\SP_EFFECT_PARAM_ST.xml" />
+    <Content Include="fogdist-nodlc\Layouts\SP_EFFECT_VFX_PARAM_ST.xml" />
+    <Content Include="fogdist-nodlc\Layouts\SWORD_ARTS_PARAM_ST.xml" />
+    <Content Include="fogdist-nodlc\Layouts\TALK_PARAM_ST.xml" />
+    <Content Include="fogdist-nodlc\Layouts\THROW_DIRECTION_SFX_PARAM_ST.xml" />
+    <Content Include="fogdist-nodlc\Layouts\THROW_INFO_BANK.xml" />
+    <Content Include="fogdist-nodlc\Layouts\TOUGHNESS_PARAM_ST.xml" />
+    <Content Include="fogdist-nodlc\Layouts\UPPER_ARM_PARAM_ST.xml" />
+    <Content Include="fogdist-nodlc\Layouts\WEAPON_GEN_PARAM_ST.xml" />
+    <Content Include="fogdist-nodlc\Layouts\WEP_ABSORP_POS_PARAM_ST.xml" />
+    <Content Include="fogdist-nodlc\Layouts\WET_ASPECT_PARAM_ST.xml" />
+    <Content Include="fogdist-nodlc\Layouts\WHITE_SIGN_COOL_TIME_PARAM_ST.xml" />
+    <Content Include="fogdist-nodlc\Layouts\WIND_PARAM_ST.xml" />
+    <Content Include="fogdist-nodlc\locations.txt" />
+    <Content Include="fogdist-nodlc\Names\CharaInitParam.txt" />
+    <Content Include="fogdist-nodlc\Names\EquipParamAccessory.txt" />
+    <Content Include="fogdist-nodlc\Names\EquipParamGoods.txt" />
+    <Content Include="fogdist-nodlc\Names\EquipParamProtector.txt" />
+    <Content Include="fogdist-nodlc\Names\EquipParamWeapon.txt" />
+    <Content Include="fogdist-nodlc\Names\ModelName.txt" />
+    <Content Include="fogdist-nodlc\Names\ShopIds.txt" />
+    <Content Include="fogdist-nodlc\Names\ShopQwc.txt" />
+    <Content Include="foggate.ico" />
+    <Content Include="FogMod\foggate.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="dist\DS1R\event\common.emevd.dcx" />
+    <None Include="dist\DS1R\event\m10_00_00_00.emevd.dcx" />
+    <None Include="dist\DS1R\event\m10_01_00_00.emevd.dcx" />
+    <None Include="dist\DS1R\event\m10_02_00_00.emevd.dcx" />
+    <None Include="dist\DS1R\event\m11_00_00_00.emevd.dcx" />
+    <None Include="dist\DS1R\event\m12_00_00_00.emevd.dcx" />
+    <None Include="dist\DS1R\event\m12_01_00_00.emevd.dcx" />
+    <None Include="dist\DS1R\event\m13_00_00_00.emevd.dcx" />
+    <None Include="dist\DS1R\event\m13_01_00_00.emevd.dcx" />
+    <None Include="dist\DS1R\event\m13_02_00_00.emevd.dcx" />
+    <None Include="dist\DS1R\event\m14_00_00_00.emevd.dcx" />
+    <None Include="dist\DS1R\event\m14_01_00_00.emevd.dcx" />
+    <None Include="dist\DS1R\event\m15_00_00_00.emevd.dcx" />
+    <None Include="dist\DS1R\event\m15_01_00_00.emevd.dcx" />
+    <None Include="dist\DS1R\event\m16_00_00_00.emevd.dcx" />
+    <None Include="dist\DS1R\event\m17_00_00_00.emevd.dcx" />
+    <None Include="dist\DS1R\event\m18_00_00_00.emevd.dcx" />
+    <None Include="dist\DS1R\event\m18_01_00_00.emevd.dcx" />
+    <None Include="dist\DS1R\map\MapStudio\m10_00_00_00.msb" />
+    <None Include="dist\DS1R\map\MapStudio\m10_01_00_00.msb" />
+    <None Include="dist\DS1R\map\MapStudio\m10_02_00_00.msb" />
+    <None Include="dist\DS1R\map\MapStudio\m11_00_00_00.msb" />
+    <None Include="dist\DS1R\map\MapStudio\m12_00_00_00.msb" />
+    <None Include="dist\DS1R\map\MapStudio\m12_00_00_01.msb" />
+    <None Include="dist\DS1R\map\MapStudio\m12_01_00_00.msb" />
+    <None Include="dist\DS1R\map\MapStudio\m13_00_00_00.msb" />
+    <None Include="dist\DS1R\map\MapStudio\m13_01_00_00.msb" />
+    <None Include="dist\DS1R\map\MapStudio\m13_02_00_00.msb" />
+    <None Include="dist\DS1R\map\MapStudio\m14_00_00_00.msb" />
+    <None Include="dist\DS1R\map\MapStudio\m14_01_00_00.msb" />
+    <None Include="dist\DS1R\map\MapStudio\m15_00_00_00.msb" />
+    <None Include="dist\DS1R\map\MapStudio\m15_01_00_00.msb" />
+    <None Include="dist\DS1R\map\MapStudio\m16_00_00_00.msb" />
+    <None Include="dist\DS1R\map\MapStudio\m17_00_00_00.msb" />
+    <None Include="dist\DS1R\map\MapStudio\m18_00_00_00.msb" />
+    <None Include="dist\DS1R\map\MapStudio\m18_01_00_00.msb" />
+    <None Include="dist\DS1R\msg\ENGLISH\menu.msgbnd.dcx" />
+    <None Include="dist\DS1R\param\GameParam\GameParam.parambnd.dcx" />
+    <None Include="dist\DS1R\script\talk\m10_00_00_00.talkesdbnd.dcx" />
+    <None Include="dist\DS1R\script\talk\m10_01_00_00.talkesdbnd.dcx" />
+    <None Include="dist\DS1R\script\talk\m10_02_00_00.talkesdbnd.dcx" />
+    <None Include="dist\DS1R\script\talk\m11_00_00_00.talkesdbnd.dcx" />
+    <None Include="dist\DS1R\script\talk\m12_00_00_00.talkesdbnd.dcx" />
+    <None Include="dist\DS1R\script\talk\m12_01_00_00.talkesdbnd.dcx" />
+    <None Include="dist\DS1R\script\talk\m13_00_00_00.talkesdbnd.dcx" />
+    <None Include="dist\DS1R\script\talk\m13_01_00_00.talkesdbnd.dcx" />
+    <None Include="dist\DS1R\script\talk\m13_02_00_00.talkesdbnd.dcx" />
+    <None Include="dist\DS1R\script\talk\m14_00_00_00.talkesdbnd.dcx" />
+    <None Include="dist\DS1R\script\talk\m14_01_00_00.talkesdbnd.dcx" />
+    <None Include="dist\DS1R\script\talk\m15_00_00_00.talkesdbnd.dcx" />
+    <None Include="dist\DS1R\script\talk\m15_01_00_00.talkesdbnd.dcx" />
+    <None Include="dist\DS1R\script\talk\m16_00_00_00.talkesdbnd.dcx" />
+    <None Include="dist\DS1R\script\talk\m17_00_00_00.talkesdbnd.dcx" />
+    <None Include="dist\DS1R\script\talk\m18_00_00_00.talkesdbnd.dcx" />
+    <None Include="dist\DS1R\script\talk\m18_01_00_00.talkesdbnd.dcx" />
+    <None Include="dist\DS1\event\common.emevd" />
+    <None Include="dist\DS1\event\m10_00_00_00.emevd" />
+    <None Include="dist\DS1\event\m10_01_00_00.emevd" />
+    <None Include="dist\DS1\event\m10_02_00_00.emevd" />
+    <None Include="dist\DS1\event\m11_00_00_00.emevd" />
+    <None Include="dist\DS1\event\m12_00_00_00.emevd" />
+    <None Include="dist\DS1\event\m12_01_00_00.emevd" />
+    <None Include="dist\DS1\event\m13_00_00_00.emevd" />
+    <None Include="dist\DS1\event\m13_01_00_00.emevd" />
+    <None Include="dist\DS1\event\m13_02_00_00.emevd" />
+    <None Include="dist\DS1\event\m14_00_00_00.emevd" />
+    <None Include="dist\DS1\event\m14_01_00_00.emevd" />
+    <None Include="dist\DS1\event\m15_00_00_00.emevd" />
+    <None Include="dist\DS1\event\m15_01_00_00.emevd" />
+    <None Include="dist\DS1\event\m16_00_00_00.emevd" />
+    <None Include="dist\DS1\event\m17_00_00_00.emevd" />
+    <None Include="dist\DS1\event\m18_00_00_00.emevd" />
+    <None Include="dist\DS1\event\m18_01_00_00.emevd" />
+    <None Include="dist\DS1\map\MapStudio\m10_00_00_00.msb" />
+    <None Include="dist\DS1\map\MapStudio\m10_01_00_00.msb" />
+    <None Include="dist\DS1\map\MapStudio\m10_02_00_00.msb" />
+    <None Include="dist\DS1\map\MapStudio\m11_00_00_00.msb" />
+    <None Include="dist\DS1\map\MapStudio\m12_00_00_00.msb" />
+    <None Include="dist\DS1\map\MapStudio\m12_00_00_01.msb" />
+    <None Include="dist\DS1\map\MapStudio\m12_01_00_00.msb" />
+    <None Include="dist\DS1\map\MapStudio\m13_00_00_00.msb" />
+    <None Include="dist\DS1\map\MapStudio\m13_01_00_00.msb" />
+    <None Include="dist\DS1\map\MapStudio\m13_02_00_00.msb" />
+    <None Include="dist\DS1\map\MapStudio\m14_00_00_00.msb" />
+    <None Include="dist\DS1\map\MapStudio\m14_01_00_00.msb" />
+    <None Include="dist\DS1\map\MapStudio\m15_00_00_00.msb" />
+    <None Include="dist\DS1\map\MapStudio\m15_01_00_00.msb" />
+    <None Include="dist\DS1\map\MapStudio\m16_00_00_00.msb" />
+    <None Include="dist\DS1\map\MapStudio\m17_00_00_00.msb" />
+    <None Include="dist\DS1\map\MapStudio\m18_00_00_00.msb" />
+    <None Include="dist\DS1\map\MapStudio\m18_01_00_00.msb" />
+    <None Include="dist\DS1\msg\ENGLISH\menu.msgbnd" />
+    <None Include="dist\DS1\param\GameParam\GameParam.parambnd" />
+    <None Include="dist\DS1\script\talk\m10_00_00_00.talkesdbnd" />
+    <None Include="dist\DS1\script\talk\m10_01_00_00.talkesdbnd" />
+    <None Include="dist\DS1\script\talk\m10_02_00_00.talkesdbnd" />
+    <None Include="dist\DS1\script\talk\m11_00_00_00.talkesdbnd" />
+    <None Include="dist\DS1\script\talk\m12_00_00_00.talkesdbnd" />
+    <None Include="dist\DS1\script\talk\m12_01_00_00.talkesdbnd" />
+    <None Include="dist\DS1\script\talk\m13_00_00_00.talkesdbnd" />
+    <None Include="dist\DS1\script\talk\m13_01_00_00.talkesdbnd" />
+    <None Include="dist\DS1\script\talk\m13_02_00_00.talkesdbnd" />
+    <None Include="dist\DS1\script\talk\m14_00_00_00.talkesdbnd" />
+    <None Include="dist\DS1\script\talk\m14_01_00_00.talkesdbnd" />
+    <None Include="dist\DS1\script\talk\m15_00_00_00.talkesdbnd" />
+    <None Include="dist\DS1\script\talk\m15_01_00_00.talkesdbnd" />
+    <None Include="dist\DS1\script\talk\m16_00_00_00.talkesdbnd" />
+    <None Include="dist\DS1\script\talk\m17_00_00_00.talkesdbnd" />
+    <None Include="dist\DS1\script\talk\m18_00_00_00.talkesdbnd" />
+    <None Include="dist\DS1\script\talk\m18_01_00_00.talkesdbnd" />
+    <None Include="fogdist-nodlc\Base\common.emevd.dcx" />
+    <None Include="fogdist-nodlc\Base\common_func.emevd.dcx" />
+    <None Include="fogdist-nodlc\Base\Data0.bdt" />
+    <None Include="fogdist-nodlc\Base\ds3-common.emedf.json" />
+    <None Include="fogdist-nodlc\Base\m30_00_00_00.emevd.dcx" />
+    <None Include="fogdist-nodlc\Base\m30_00_00_00.msb.dcx" />
+    <None Include="fogdist-nodlc\Base\m30_00_00_00.talkesdbnd.dcx" />
+    <None Include="fogdist-nodlc\Base\m30_01_00_00.emevd.dcx" />
+    <None Include="fogdist-nodlc\Base\m30_01_00_00.msb.dcx" />
+    <None Include="fogdist-nodlc\Base\m30_01_00_00.talkesdbnd.dcx" />
+    <None Include="fogdist-nodlc\Base\m31_00_00_00.emevd.dcx" />
+    <None Include="fogdist-nodlc\Base\m31_00_00_00.msb.dcx" />
+    <None Include="fogdist-nodlc\Base\m31_00_00_00.talkesdbnd.dcx" />
+    <None Include="fogdist-nodlc\Base\m32_00_00_00.emevd.dcx" />
+    <None Include="fogdist-nodlc\Base\m32_00_00_00.msb.dcx" />
+    <None Include="fogdist-nodlc\Base\m32_00_00_00.talkesdbnd.dcx" />
+    <None Include="fogdist-nodlc\Base\m33_00_00_00.emevd.dcx" />
+    <None Include="fogdist-nodlc\Base\m33_00_00_00.msb.dcx" />
+    <None Include="fogdist-nodlc\Base\m33_00_00_00.talkesdbnd.dcx" />
+    <None Include="fogdist-nodlc\Base\m34_01_00_00.emevd.dcx" />
+    <None Include="fogdist-nodlc\Base\m34_01_00_00.msb.dcx" />
+    <None Include="fogdist-nodlc\Base\m34_01_00_00.talkesdbnd.dcx" />
+    <None Include="fogdist-nodlc\Base\m35_00_00_00.emevd.dcx" />
+    <None Include="fogdist-nodlc\Base\m35_00_00_00.msb.dcx" />
+    <None Include="fogdist-nodlc\Base\m35_00_00_00.talkesdbnd.dcx" />
+    <None Include="fogdist-nodlc\Base\m37_00_00_00.emevd.dcx" />
+    <None Include="fogdist-nodlc\Base\m37_00_00_00.msb.dcx" />
+    <None Include="fogdist-nodlc\Base\m37_00_00_00.talkesdbnd.dcx" />
+    <None Include="fogdist-nodlc\Base\m38_00_00_00.emevd.dcx" />
+    <None Include="fogdist-nodlc\Base\m38_00_00_00.msb.dcx" />
+    <None Include="fogdist-nodlc\Base\m38_00_00_00.talkesdbnd.dcx" />
+    <None Include="fogdist-nodlc\Base\m39_00_00_00.emevd.dcx" />
+    <None Include="fogdist-nodlc\Base\m39_00_00_00.msb.dcx" />
+    <None Include="fogdist-nodlc\Base\m39_00_00_00.talkesdbnd.dcx" />
+    <None Include="fogdist-nodlc\Base\m40_00_00_00.emevd.dcx" />
+    <None Include="fogdist-nodlc\Base\m40_00_00_00.msb.dcx" />
+    <None Include="fogdist-nodlc\Base\m40_00_00_00.talkesdbnd.dcx" />
+    <None Include="fogdist-nodlc\Base\m41_00_00_00.emevd.dcx" />
+    <None Include="fogdist-nodlc\Base\m41_00_00_00.msb.dcx" />
+    <None Include="fogdist-nodlc\Base\m41_00_00_00.talkesdbnd.dcx" />
+    <None Include="FogMod\App.config" />
+    <None Include="FogMod\FogMod.csproj" />
+    <None Include="FogMod\LICENSE" />
+    <None Include="FogMod\packages.config" />
+    <None Include="FogMod\Properties\Settings.settings" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FogMod\AnnotationData.cs" />
+    <Compile Include="FogMod\EventConfig.cs" />
+    <Compile Include="FogMod\GameDataWriter.cs" />
+    <Compile Include="FogMod\GameDataWriter3.cs" />
+    <Compile Include="FogMod\GenerateConfig.cs" />
+    <Compile Include="FogMod\Graph.cs" />
+    <Compile Include="FogMod\GraphChecker.cs" />
+    <Compile Include="FogMod\GraphConnector.cs" />
+    <Compile Include="FogMod\ItemReader.cs" />
+    <Compile Include="FogMod\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FogMod\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FogMod\MainForm3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FogMod\MainForm3.Designer.cs">
+      <DependentUpon>MainForm3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FogMod\Program.cs" />
+    <Compile Include="FogMod\Properties\AssemblyInfo.cs" />
+    <Compile Include="FogMod\Properties\Resources.Designer.cs" />
+    <Compile Include="FogMod\Properties\Settings.Designer.cs" />
+    <Compile Include="FogMod\Randomizer.cs" />
+    <Compile Include="FogMod\RandomizerOptions.cs" />
+    <Compile Include="FogMod\Util.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FogMod\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FogMod\MainForm3.resx">
+      <DependentUpon>MainForm3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FogMod\Properties\Resources.resx" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
+  <ProjectExtensions>
+    <VisualStudio AllowExistingFolder="true" />
+  </ProjectExtensions>
+  <Import Project="packages\Fody.6.0.0\build\Fody.targets" Condition="Exists('packages\Fody.6.0.0\build\Fody.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\Fody.6.0.0\build\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Fody.6.0.0\build\Fody.targets'))" />
+    <Error Condition="!Exists('packages\Costura.Fody.4.1.0\build\Costura.Fody.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Costura.Fody.4.1.0\build\Costura.Fody.props'))" />
+  </Target>
+</Project>
