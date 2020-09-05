@@ -12,6 +12,9 @@ To put it simply, [thefifthmatt](https://github.com/thefifthmatt) appears to bel
 
 I, on the other hand, quickly and sloppily used horrible practices to make it just work. Having three different version is a testament to that. This is honestly one of the worst ways to implement optional DLCs, but if it works, it works I guess?
 
+## Current Issues
+For Ringed City only randomizer, all fog gates leading to Ringed City spawn you in the starting area. I don't know why this is happening.
+
 ## Warning
 I have done partial in-game testing for the Ringed City only version and out-of-game testing for the others (aka. it didn't give me an error when randomizing). While it should work properly, I don't guarantee that it will.
 If you have any issues regarding crashing, infinite load screens, or the DLCs, create an issue here or email me at
