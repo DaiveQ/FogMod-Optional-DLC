@@ -1,3 +1,8 @@
+## I highly recommend becoming semi-comfortable with cheat engine
+Obiously, don't use cheat engine in multiplayer because it ruins the fun for other people, but it is a very helpful tool when dealing with problems in mods.
+One example is modifying the world state to put the sword back in Gundyr and working around a stuck Gundyr problem. Another one is no-clipping into the Halflight boss
+room to deal with Ringed City warps working improperly (see issues). [Igromanru guide/CE table](https://github.com/igromanru/Dark-Souls-III-Cheat-Engine-Guide) makes this easy.
+
 # DS3 Fog Gate Randomizer (Optional DLCs)
 Information on program and usage can be found in the description of the [original mod](https://www.nexusmods.com/darksouls3/mods/551?tab=description) (Read this prior to use).
 All instruction should be the same for the most part, but ensure the DLC options for other mods reflects the DLCs you have.
