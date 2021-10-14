@@ -22,8 +22,7 @@ For Ringed City only randomizer, all fog gates leading to Ringed City spawn you 
 
 ## Warning
 I have done partial in-game testing for the Ringed City only version and out-of-game testing for the others (aka. it didn't give me an error when randomizing). While it should work properly, I don't guarantee that it will.
-If you have any issues regarding crashing, infinite load screens, or the DLCs, create an issue here or email me at
-[KaranveerPublic+Fog@gmail.com](mailto:KaranveerPublic+Fog@gmail.com).
+If you have any issues regarding crashing, infinite load screens, or the DLCs, create an issue here.
 If you aren't sure whether a bug is from my project or the original, assume it is me first.
 If you used any of the versions and they work, please let me know along with which verison you used.
 
