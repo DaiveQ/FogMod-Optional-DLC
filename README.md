@@ -1,3 +1,9 @@
+# DEPRECATED. Use original mod instead 
+As of February 2022, thefifthmatt has updated the original mod to make DLC's optional, thus this fork is no longer necessary.
+With that, please use the original mod instead ([NexusMods link](https://www.nexusmods.com/darksouls3/mods/551), [GitHub link](https://github.com/thefifthmatt/FogMod)).
+Don't forget to endorse the original mod on Nexus if you liked it.
+
+
 ## I highly recommend becoming semi-comfortable with cheat engine
 Obiously, don't use cheat engine in multiplayer because it ruins the fun for other people, but it is a very helpful tool when dealing with problems in mods.
 One example is modifying the world state to put the sword back in Gundyr and working around a stuck Gundyr problem. Another one is no-clipping into the Halflight boss
